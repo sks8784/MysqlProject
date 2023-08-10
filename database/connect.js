@@ -1,28 +1,25 @@
 const mysql = require("mysql2");
-const dotenv = require('dotenv');
-const { createUserTable, createCandidateTable, createCandidateStatusTable } = require('./tables');
+const dotenv=require('dotenv');
 
 dotenv.config();
 
-const dbpassword = process.env.DBPASSWORD;
+const dbpassword=process.env.DBPASSWORD;
 
-const db = () =>
-    mysql.createConnection({
-        host: "localhost",
-        user: "root",
-        password: dbpassword,
-        database: "Demo_Project"
-    })
+const db = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: dbpassword,
+    database: "Demo_Project"
+})
 
-// db.connect(async function (err) {
-//     if (err) {
-//         throw err;
-//     }
-//     else {
-//         console.log("connected to db");
-
-//     }
-// })
+db.connect(async function (err) {
+    if (err) {
+        throw err;
+    }
+    else {
+        console.log("connected to db");   
+    }
+})
 
 
 

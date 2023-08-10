@@ -1,6 +1,5 @@
 const db = require("../database/connect");
 
-
 const createDatabase=async(req,res)=>{
     const sql = `CREATE DATABASE IF NOT EXISTS Demo_Project`;
     db.query(sql, function (err, data) {
